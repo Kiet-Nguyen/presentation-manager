@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const validator = require('validator');
 
 const PresentationSchema = new mongoose.Schema({
   presenter: {
@@ -19,6 +20,15 @@ const PresentationSchema = new mongoose.Schema({
     minlength: 1,
     trim: true,
   },
+  article: {
+    type: String,
+    required: true,
+    trim: true,
+    validate: {
+      validator: validator.isURL,
+      message: '{VALUE} is not a valid URL.'
+    },
+  }
 });
 
 const Presentation = mongoose.model('Presentation', PresentationSchema);

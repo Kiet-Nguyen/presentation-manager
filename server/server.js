@@ -47,3 +47,5 @@ if (process.env.NODE_ENV === 'production') {
 app.listen(port, () => {
   console.log(`Starting app at port ${port}`);
 });
+
+module.exports = { app };
