@@ -28,6 +28,11 @@ const PresentationSchema = new mongoose.Schema({
       validator: validator.isURL,
       message: '{VALUE} is not a valid URL.'
     },
+  },
+  date: {
+    type: Date,
+    default: Date.now,
+    required: true
   }
 });
 

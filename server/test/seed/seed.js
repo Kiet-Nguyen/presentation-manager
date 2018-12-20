@@ -9,6 +9,7 @@ const presentations = [
     evaluator: 'Sue',
     topic: 'React',
     article: 'https://mongoosejs.com',
+    date: '2018-12-20',
   },
   {
     _id: new ObjectID(),
@@ -16,6 +17,7 @@ const presentations = [
     evaluator: 'Kiet',
     topic: 'React',
     article: 'https://mongoosejs.com',
+    date: '2018-12-20',
   },
 ];
 

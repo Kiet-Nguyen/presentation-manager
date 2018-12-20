@@ -27,6 +27,7 @@ app.post('/presentations/add', async (req, res) => {
       presenter: req.body.presenter,
       evaluator: req.body.evaluator,
       topic: req.body.topic,
+      article: req.body.article,
     });
     const doc = await presentation.save();
     res.send(doc);
