@@ -28,6 +28,9 @@ app.post('/presentations/add', async (req, res) => {
       evaluator: req.body.evaluator,
       topic: req.body.topic,
       article: req.body.article,
+      date: req.body.date,
+      keywords: req.body.keywords,
+      summary: req.body.summary,
     });
     const doc = await presentation.save();
     res.send(doc);

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { NavLink, Route, Switch } from 'react-router-dom';
 
-import Presentations from '../../components/Presentations/Presentations';
-import AddPresentation from '../../components/AddPresentation/AddPresentation';
+import Presentations from '../Presentations/Presentations';
+import AddPresentation from '../AddPresentation/AddPresentation';
 import LandingPage from '../../components/LandingPage/LandingPage';
 
 class Navigation extends Component {
@@ -29,7 +29,7 @@ class Navigation extends Component {
               <div className="navbar-nav">
                 <NavLink
                   className="nav-item nav-link active"
-                  to="/presentation"
+                  to="/presentations"
                 >
                   Presentations<span className="sr-only">(current)</span>
                 </NavLink>
@@ -45,7 +45,7 @@ class Navigation extends Component {
         <Route path="/" exact component={LandingPage} />
         <Switch>
           <Route path="/presentation/add" exact component={AddPresentation} />
-          <Route path="/presentation" component={Presentations} />
+          <Route path="/presentations" component={Presentations} />
         </Switch>
       </div>
     );

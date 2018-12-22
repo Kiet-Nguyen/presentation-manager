@@ -1,1 +1,1 @@
-export { fetchPresentations } from './presentations';
+export { fetchPresentations, postPresentation } from './presentations';

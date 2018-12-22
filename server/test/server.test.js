@@ -13,3 +13,9 @@ describe('GET /presentations', () => {
     expect(response.body.length).toBe(2);
   });
 });
+
+// describe('POST /presentations/add', () => {
+//   it('should add new presentation', () => {
+
+//   });
+// });

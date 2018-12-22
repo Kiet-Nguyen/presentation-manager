@@ -5,6 +5,7 @@ const initialState = {
   presentations: [],
   loading: false,
   error: null,
+  presenter: '',
 };
 
 const reducer = (state = initialState, action) => {
@@ -20,6 +21,22 @@ const reducer = (state = initialState, action) => {
       });
 
     case actionTypes.FETCH_PRESENTATION_FAIL:
+      return updateObject(state, {
+        loading: false,
+        error: action.error,
+      });
+
+    case actionTypes.POST_PRESENTATION_START:
+      return updateObject(state, { loading: true });
+
+    case actionTypes.POST_PRESENTATION_SUCCESS:
+      return updateObject(state, {
+        presentations: state.presentations,
+        loading: false,
+        error: null,
+      });
+
+    case actionTypes.POST_PRESENTATION_FAIL:
       return updateObject(state, {
         loading: false,
         error: action.error,

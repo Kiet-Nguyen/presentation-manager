@@ -26,14 +26,21 @@ const PresentationSchema = new mongoose.Schema({
     trim: true,
     validate: {
       validator: validator.isURL,
-      message: '{VALUE} is not a valid URL.'
+      message: '{VALUE} is not a valid URL.',
     },
   },
   date: {
-    type: Date,
-    default: Date.now,
-    required: true
-  }
+    type: String,
+    required: true,
+  },
+  keywords: {
+    type: String,
+    required: true,
+  },
+  summary: {
+    type: String,
+    required: true,
+  },
 });
 
 const Presentation = mongoose.model('Presentation', PresentationSchema);

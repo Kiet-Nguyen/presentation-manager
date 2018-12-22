@@ -27,11 +27,43 @@ export const fetchPresentations = () => {
 
     try {
       const response = await axios.get('/presentations');
-      console.log('response', response.data);
-
       dispatch(fetchPresentationsSuccess(response.data));
     } catch (error) {
       dispatch(fetchPresentationsFail(error));
+    }
+  };
+};
+
+export const postPresentationStart = () => {
+  return {
+    type: actionTypes.POST_PRESENTATION_START,
+  };
+};
+
+export const postPresentationSuccess = presentationData => {
+  return {
+    type: actionTypes.POST_PRESENTATION_SUCCESS,
+    presentationData,
+  };
+};
+
+export const postPresentationFail = error => {
+  return {
+    type: actionTypes.POST_PRESENTATION_FAIL,
+    error,
+  };
+};
+
+export const postPresentation = presentationData => {
+  return async dispatch => {
+    dispatch(postPresentationStart());
+
+    try {
+      await axios.post('/presentations/add', presentationData);
+      dispatch(postPresentationSuccess(presentationData));
+    } catch (error) {
+      console.log('error from POST', error);
+      dispatch(postPresentationFail(error));
     }
   };
 };

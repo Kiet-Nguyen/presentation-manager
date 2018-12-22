@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import Presentation from './Presentation/Presentation';
+import Presentation from '../../components/Presentation/Presentation';
 import * as actions from '../../store/actions/index';
 
 class Presentations extends Component {
@@ -12,9 +12,12 @@ class Presentations extends Component {
   render() {
     const { presentations, loading } = this.props;
 
-    let presentationRows = <p>Loading...</p>;
+    let presentationRows = (
+      <tr>
+        <td>Loading...</td>
+      </tr>
+    );
     if (!loading) {
-      console.log('presentations', presentations);
       presentationRows = presentations.map(data => (
         <Presentation key={data._id} data={data} />
       ));
@@ -40,18 +43,14 @@ class Presentations extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    presentations: state.presentations,
-    loading: state.loading,
-  };
-};
+const mapStateToProps = state => ({
+  presentations: state.presentations,
+  loading: state.loading,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    onFetchPresentations: () => dispatch(actions.fetchPresentations()),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  onFetchPresentations: () => dispatch(actions.fetchPresentations()),
+});
 
 export default connect(
   mapStateToProps,
