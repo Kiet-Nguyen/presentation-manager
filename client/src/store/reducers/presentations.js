@@ -5,7 +5,6 @@ const initialState = {
   presentations: [],
   loading: false,
   error: null,
-  presenter: '',
 };
 
 const reducer = (state = initialState, action) => {

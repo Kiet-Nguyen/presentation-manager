@@ -24,8 +24,8 @@ class Presentations extends Component {
     }
 
     return (
-      <div>
-        <table className="table">
+      <div className="container-fluid">
+        <table className="table my-5">
           <thead>
             <tr>
               <th scope="col">Presenter</th>

@@ -10,6 +10,8 @@ const presentations = [
     topic: 'React',
     article: 'https://mongoosejs.com',
     date: '2018-12-20',
+    keywords: 'mongoose',
+    summary: 'Mongoose',
   },
   {
     _id: new ObjectID(),
@@ -18,6 +20,8 @@ const presentations = [
     topic: 'React',
     article: 'https://mongoosejs.com',
     date: '2018-12-20',
+    keywords: 'mongoose',
+    summary: 'Mongoose',
   },
 ];
 
